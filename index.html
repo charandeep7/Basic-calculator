@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js" defer></script>
+    <link rel="shortcut icon" href="https://cdn.pixabay.com/photo/2017/01/30/14/20/time-2020934_960_720.png" type="image/x-icon">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 62.5%;
+        }
+        :root{
+            --black: #000;
+            --white: #fff;
+
+        }
+        body{
+            background-image: linear-gradient(to right, rgba(255,0,0,0), hsla(274, 100%, 50%, 1));
+            transition: all 5s ease-in-out;
+        }
+        .wrapper{
+            display: flex;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            width:max-content;
+            background-color: aliceblue;
+            border-radius: 35px;
+            box-shadow: 0 0 100px #fff;
+        }
+        .bg-dark-container{
+            background-color: var(--black);
+            box-shadow: 0 0 100px #000;
+        }
+        .bg-dark-btn{
+            color: var(--white);
+        }
+        .bg-dark-body{
+            background-image: linear-gradient(to right, var(--black), hsla(274, 100%, 50%, 1));
+        }
+        input[type="text"]{
+            grid-column: span 4;
+            height: 40px;
+            border: none;
+            border-radius: 35px;
+            font-size: 2rem;
+            margin: 1em;
+            text-align: right;
+            padding: 1em;
+        }
+        input[type="text"]:focus{
+            outline: none;
+        }
+        button{
+            font-size: 2rem;
+            height: 40px;
+            border: none;
+            margin: 1em;
+            border-radius: 50%;
+            text-align: center;
+            opacity: .7;
+            text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+            0px -4px 10px rgba(255,255,255,0.3);
+            transform-origin: bottom;
+            transition: all .2s ease-in-out;
+            background: transparent;
+        }
+        #equal{
+            color: red;
+        }
+        #clear{
+            color: blue;
+        }
+        button:hover{
+            opacity: 1;
+            transform: scale(1.7);
+            font-weight: bold;
+        }
+        #del{
+            color: green;
+        }
+        #del:hover{
+            transform: scale(1.4);
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            top: 10px;
+            left: 152em;
+        }
+
+        .switch input { 
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+            font-size: 0;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: #000;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #fff;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+        #clr-btn{
+            position: relative;
+            font-size: 2rem;
+            top: -25px;
+            left: -15px;
+            opacity: 1;
+        }
+    </style>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="wrapper">
+    <div class="container" onmousedown="return false" onselectstart="return false">
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round clr-btn">Dark Mode</span>
+        </label>
+      <input type="text" placeholder="0" />
+      <button id="clear">C</button>
+      <button>%</button>
+      <button id="del">DEL</button>
+      <button>/</button>
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button>*</button>
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button>-</button>
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>+</button>
+      <button>00</button>
+      <button>0</button>
+      <button>.</button>
+      <button id="equal">=</button>
+    </div>
+    </div>
+  </body>
+</html>
